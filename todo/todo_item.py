@@ -1,5 +1,5 @@
 class item:
-    def __init__(self, title, desc=" ", status=0):
+    def __init__(self, title, desc="", status=0):
         self.title = title
         self.desc = desc
         self.status = status

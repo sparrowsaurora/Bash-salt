@@ -1,4 +1,4 @@
-# from item import item
+from todo_item import item
 
 txt = "C:/Users/Sparrow/Documents/GitHub/Bash-salt/todo/items.txt"
 
@@ -19,30 +19,42 @@ def main():
    
 def ask_for_task():
     # add ability to use flaggs to add a description
-    task = input("enter a task ('q' to Quit)\n>> ").strip().title()
+    task = input("enter a task ('q' to Quit)\n>> ").strip().lower()
     print("")
     if task.lower() in ("q", "quit", "exit", "n"):
         quit()
+
+    # Check if -m is used
+    if " -m " in task:
+        parts = task.split(' -m ', 1)
+        title = parts[0].strip().title()
+        desc = parts[1].strip()
+        task_item = item(title, desc)
     else:
-        validation(task)
+        title = task.strip().title()
+        task_item = item(title)
+
+    validation(task_item.title, task_item.desc, task_item.status)
         
 
-def validation(task):
+def validation(title, description, status):
+    if description:
+        description = f"< {description} >"
     while True:
-        confirmation = input(f"confirm task < {task} > (Y/n)\n>> ")
+        confirmation = input(f"confirm task < {title} > {description} (Y/n)\n>> ")
         print("")
         if confirmation.lower().startswith("n"):
             break
         elif confirmation.lower().startswith("y") or confirmation.strip() == "":
-            add_task(task)
+            add_task(title, description, status)
             break
         else:
             print("Not a valid input.")
             continue
     
-def add_task(task):
+def add_task(title, desc, status):
     with open(txt, "a") as file:
-        file.write(task + "\n")
+        file.write(f"{title}/b/{desc}/b/{status}\n")
 
 def rm_task():
     task_to_remove = input("Enter a Task To Remove\n>> ")
@@ -58,8 +70,11 @@ def rm_task():
 def veiw_tasks():
     with open(txt, "r") as file:
         tasks = file.readlines()
+        index = 0
         for task in tasks:
-            print(f"\t< {task.strip()} >")
+            index += 1
+            for part in task.split("/b/"):
+                print(f"\t{index}: < {part[0]} >\n\t< {part[1]} >\n\t< status: {part[2]} >")
         print("")
 
 main()
