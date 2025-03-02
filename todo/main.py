@@ -39,9 +39,9 @@ def ask_for_task():
 
 def validation(title, description, status):
     if description:
-        description = f"< {description} >"
+        input_description = f"< {description} >"
     while True:
-        confirmation = input(f"confirm task < {title} > {description} (Y/n)\n>> ")
+        confirmation = input(f"confirm task < {title} > {input_description} (Y/n)\n>> ")
         print("")
         if confirmation.lower().startswith("n"):
             break
@@ -73,8 +73,8 @@ def veiw_tasks():
         index = 0
         for task in tasks:
             index += 1
-            for part in task.split("/b/"):
-                print(f"\t{index}: < {part[0]} >\n\t< {part[1]} >\n\t< status: {part[2]} >")
+            part = task.strip().split("/b/")
+            print(f"\t{index}: < {part[0]} >\n\t< {part[1]} >\n\t< status: {part[2]} >\n")
         print("")
 
 main()
