@@ -57,15 +57,31 @@ def add_task(title, desc, status):
         file.write(f"{title}/b/{desc}/b/{status}\n")
 
 def rm_task():
-    task_to_remove = input("Enter a Task To Remove (number) \n>> ")
+    task_to_remove = ""
+    while type(task_to_remove) != int:
+        task_to_remove = input("Enter a Task (number) To Remove\n>> ")
+
+        try:
+            task_to_remove = int(task_to_remove)
+        except ValueError:
+            print("Invalid input. Please enter a valid task number.")
+            continue
+
+        with open(txt, "r") as file:
+            tasks = file.readlines()
+
+        if task_to_remove < 1 or task_to_remove > len(tasks):
+            print("Invalid task number.")
+            continue
+
     print("")
-    with open(txt, "r") as file:
-        tasks = file.readlines()
     
     with open(txt, "w") as file:
+        i = 1
         for task in tasks:
-            if task.strip() != task_to_remove:
+            if i != task_to_remove:
                 file.write(task)
+            i += 1
 
 def veiw_tasks():
     with open(txt, "r") as file:
