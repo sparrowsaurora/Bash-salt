@@ -41,7 +41,7 @@ def validation(title, description, status):
     if description:
         input_description = f"< {description} >"
     while True:
-        confirmation = input(f"confirm task < {title} > {input_description} (Y/n)\n>> ")
+        confirmation = input(f"confirm task < {title} > {input_description if description else ''} (Y/n)\n>> ")
         print("")
         if confirmation.lower().startswith("n"):
             break
@@ -57,7 +57,7 @@ def add_task(title, desc, status):
         file.write(f"{title}/b/{desc}/b/{status}\n")
 
 def rm_task():
-    task_to_remove = input("Enter a Task To Remove\n>> ")
+    task_to_remove = input("Enter a Task To Remove (number) \n>> ")
     print("")
     with open(txt, "r") as file:
         tasks = file.readlines()
@@ -74,7 +74,6 @@ def veiw_tasks():
         for task in tasks:
             index += 1
             part = task.strip().split("/b/")
-            print(f"\t{index}: < {part[0]} >\n\t< {part[1]} >\n\t< status: {part[2]} >\n")
-        print("")
+            print(f"\t{index}: < {part[0]} >\n\t< {part[1] if part[1] != "" else '--No Description--'} >\n\t< status: {part[2]} >\n")
 
 main()
