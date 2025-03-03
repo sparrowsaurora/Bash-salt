@@ -22,13 +22,15 @@ class item:
         else:
             self.status = new_status
         
-    def interpret_status(self):
-        if self.status == 0:
+    def interpret_status(status):
+        if status == 0:
             return "not started"
-        elif self.status == 1:
+        elif status == 1:
             return "In Progress"
-        else:
+        elif status == 2:
             return "Complete"
+        else:
+            return "Error in interpret_status()"
     
     def display(self):
         print("\t{title}\n\t{desc}\n\t{interpret_status()}")

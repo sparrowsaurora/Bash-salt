@@ -82,6 +82,7 @@ def rm_task():
             if i != task_to_remove:
                 file.write(task)
             i += 1
+    print(f"Task < {task_to_remove} > removed successfully.")
 
 def veiw_tasks():
     with open(txt, "r") as file:
@@ -90,6 +91,9 @@ def veiw_tasks():
         for task in tasks:
             index += 1
             part = task.strip().split("/b/")
-            print(f"\t{index}: < {part[0]} >\n\t< {part[1] if part[1] != "" else '--No Description--'} >\n\t< status: {part[2]} >\n")
+            status = item.interpret_status(int(part[2]))
+            print(f"\t{index}: < {part[0]} >\n\t< {
+                part[1] if part[1] != "" else '--No Description--'
+                } >\n\t< status: {status} >\n")
 
 main()
