@@ -31,6 +31,3 @@ class item:
             return "Complete"
         else:
             return "Error in interpret_status()"
-    
-    def display(self):
-        print("\t{title}\n\t{desc}\n\t{interpret_status()}")

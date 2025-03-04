@@ -1,6 +1,8 @@
-alias la = 'ls -a'
+alias la='ls -a'
 
-alias rf = 'rm -rf'
+alias rf='rm -rf'
+
+alias c='clear'
 
 function mkcd() {
     mkdir $1 && cd $1

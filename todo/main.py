@@ -1,3 +1,10 @@
+'''
+To Do:
+
+- ability to change status
+
+'''
+
 from todo_item import item
 
 txt = "C:/Users/Sparrow/Documents/GitHub/Bash-salt/todo/items.txt"
@@ -95,5 +102,32 @@ def veiw_tasks():
             print(f"\t{index}: < {part[0]} >\n\t< {
                 part[1] if part[1] != "" else '--No Description--'
                 } >\n\t< status: {status} >\n")
+
+# def change_status(task, change_to = 0):
+#     task = ""
+#     while type(task) != int:
+#         task = input("Enter a Task (number) To Remove\n>> ")
+#         try:
+#             task = int(task)
+#         except ValueError:
+#             print("Invalid input. Please enter a valid task number.")
+#             continue
+
+#         with open(txt, "r") as file:
+#             tasks = file.readlines()
+
+#         if task < 1 or task > len(tasks):
+#             print("Invalid task number.")
+#             continue
+
+#     print("")
+#     with open(txt, "w") as file:
+#         i = 1
+#         for task in tasks:
+#             if i != task:
+#                 file.write(task)
+#             i += 1
+#     change_to = item.con
+#     print(f"Task < {task} > status changed to {change_to}.")
 
 main()
