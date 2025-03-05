@@ -4,6 +4,14 @@ alias rf='rm -rf'
 
 alias c='clear'
 
+alias gl='git log --oneline --decorate --all'
+
+alias b='cd ..'
+
+function git-a() {
+    git add . && git commit -m $1
+}
+
 function mkcd() {
     mkdir $1 && cd $1
 }
@@ -16,4 +24,8 @@ function todo() {
 function wordle() {
     python Documents/GitHub/Bash-salt/wordle/wordle.py
     #link to wordle project
+}
+
+function tree() {
+    python Documents/GitHub/Bash-salt/tree/tree.py
 }
