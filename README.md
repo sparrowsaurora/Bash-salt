@@ -23,3 +23,16 @@ Exactly what it sounds like...
 ## Future Projects
 
 - something
+
+## Added BASH Commands
+
+    "la" = ls -a
+    "rf" = rm -rf
+    "c" = clear
+    "b" = cd ..
+    "gl" = git log --oneline --decorate --all
+    "git-a" = git add . && git commit -m $
+    "mkcd" = mkdir $ && cd $
+    "todo" = todo
+    "wordle" = a wordle game
+    "tree" = prints a file tree
