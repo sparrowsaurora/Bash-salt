@@ -33,6 +33,7 @@ Exactly what it sounds like...
     "gl" = git log --oneline --decorate --all
     "git-a" = git add . && git commit -m $
     "mkcd" = mkdir $ && cd $
+    "view" = cd $ && la && b
     "todo" = todo
     "wordle" = a wordle game
     "tree" = prints a file tree
