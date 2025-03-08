@@ -9,7 +9,7 @@ alias gl='git log --oneline --decorate --all'
 alias b='cd ..'
 
 function git-a() {
-    git add . && git commit -m "$1"
+    git add . && git commit -m "$"
 }
 
 function view() {
