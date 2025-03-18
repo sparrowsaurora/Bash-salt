@@ -52,6 +52,7 @@ Exactly what it sounds like...
 1. **CLI-Tetris** – Something like Chess, Tetris, or a text adventure.
 2. **Bonsai** – Creates Ascii Bonsai tree with customization options.
 3. **Music Player** – Plays local music files with simple navigation.
+4. **Stock Visualiser** - gives me stock updates for the past day
 
 ## Added BASH Commands
 
