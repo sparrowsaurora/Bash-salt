@@ -1,5 +1,7 @@
 # pip install termcolor
 
+
+
 def print_instructions():
     '''
         welcome instructions
@@ -138,19 +140,19 @@ def check_for_end_condition(latest_guess, guess_count, target_word):
     
 def target_word():
     #get random target word function
-    target_word_file = open("C:/Users/Sparrow/Documents/GitHub/Bash-salt/wordle/target_words.txt", "r")
+    target_word_file = open(TARGET_WORDS, "r")
     return choice(target_word_file.readlines())
 
 def total_guesses_to_file(guess_count, target_word):
     '''
         writes total guesses to file
     '''
-    wordle_guesses = open("C:/Users/Sparrow/Documents/GitHub/Bash-salt/wordle/wordle_guesses.txt", "a")
+    wordle_guesses = open(WORDLE_GUESSES, "a")
     wordle_guesses.writelines("It took " + str(guess_count) + " guesses to guess the word " + target_word + "\n")
     wordle_guesses.close()
 
 def all_words():
-    all_words_file = open("C:/Users/Sparrow/Documents/GitHub/Bash-salt/wordle/all_words.txt", "r")
+    all_words_file = open(ALL_WORDS, "r")
     all_words = all_words_file.read().split("\n")
     all_words_file.close()
     return all_words
@@ -177,4 +179,9 @@ def main(target_word):
 
 from random import choice
 from termcolor import cprint
+
+ALL_WORDS = "~/source/repos/Bash-salt/wordle/all_words.txt"
+TARGET_WORDS = "~/source/repos/Bash-salt/wordle/target_words.txt"
+WORDLE_GUESSES = "~/source/repos/Bash-salt/wordle/wordle_guesses.txt"
+
 main(target_word())
