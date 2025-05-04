@@ -1,6 +1,7 @@
 import os
+import sys
 
-def generate_file_map(directory_path, excluded_files=None):
+def generate_file_map(directory_path: str, excluded_files: list =None, gen_file: bool =False):
     """
     Generates a Markdown file map of a directory structure.
 
@@ -16,7 +17,7 @@ def generate_file_map(directory_path, excluded_files=None):
     if excluded_files is None:
         excluded_files = []
 
-    def explore_directory(path, level=0, indent="    "):
+    def explore_directory(path: str, level: int =0, indent: str ="    ") -> list:
         """
         Recursively explores the directory and builds the file map.
 
@@ -67,7 +68,8 @@ def generate_file_map(directory_path, excluded_files=None):
 
     print(f"File map saved to: {output_file}")
 
-if __name__ == "__main__":
+
+def main():
     # Get user input for directory and excluded files
     directory = input("Enter the project directory path: ")
     excluded_input = input(
@@ -80,4 +82,8 @@ if __name__ == "__main__":
     )
 
     # Generate the file map
-    generate_file_map(directory, excluded_files)
+    if len(sys.argv) == 1 and sys.argv == "-f":
+        generate_file_map(directory, excluded_files, True)
+    else:
+        generate_file_map(directory, excluded_files)
+
