@@ -1,7 +1,7 @@
 import os
 import sys
 
-def generate_file_map(directory_path: str, excluded_files: list =None, gen_file: bool =False):
+def generate_file_map(directory_path: str, excluded_files: list =None, gen_file: bool =False) -> str:
     """
     Generates a Markdown file map of a directory structure.
 
@@ -58,20 +58,36 @@ def generate_file_map(directory_path: str, excluded_files: list =None, gen_file:
     # Build the directory structure
     file_structure = explore_directory(directory_path)
 
-    # Write to the Markdown file
-    with open(output_file, "w", encoding="utf-8") as file:
-        file.write("# File Map\n\n")
-        file.write(f"    {directory_name}/\n")
-        if file_structure:
-            file.write("    │\n")
-        file.write("\n".join(file_structure))
+    if gen_file:
+        # Write to the Markdown file
+        with open(output_file, "w", encoding="utf-8") as file:
+            file.write(f"# {directory_name} : File Map\n\n")
+            file.write(f"    {directory_name}/\n")
+            if file_structure:
+                file.write("    │\n")
+            file.write("\n".join(file_structure))
 
-    print(f"File map saved to: {output_file}")
+        return f"File map saved to: {output_file}"
+    
+    print(f"# {directory_name} : File Map\n")
+    print(f"    {directory_name}/")
+    if file_structure:
+        print("    │")
+    print("\n".join(file_structure))
+    return f"Done!"
+    
 
+def get_vars() -> tuple[str, list[str]]:
+    if len(sys.argv) >= 3 and sys.argv[1] == "-f":
+        directory = sys.argv[2]
+        enable_flag = True
+    elif len(sys.argv) == 2:
+        directory = sys.argv[1]
+        enable_flag = False
+    else:
+        directory = os.getcwd()
+        enable_flag = False
 
-def main():
-    # Get user input for directory and excluded files
-    directory = input("Enter the project directory path: ")
     excluded_input = input(
         "Enter comma-separated file names to ignore (or leave blank): "
     )
@@ -80,10 +96,10 @@ def main():
         if excluded_input
         else []
     )
+    return directory, excluded_files, enable_flag
 
-    # Generate the file map
-    if len(sys.argv) == 1 and sys.argv == "-f":
-        generate_file_map(directory, excluded_files, True)
-    else:
-        generate_file_map(directory, excluded_files)
+def main():
+    directory, excluded_files, enable_flag = get_vars()
+    print(generate_file_map(directory, excluded_files, enable_flag))
 
+main()
