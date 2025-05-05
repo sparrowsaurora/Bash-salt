@@ -67,15 +67,15 @@ function install_package() {
     if $force_install; then
         echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
         # actually install the package here
-        echo -e "${GREEN}$package_name successfully installed${ENDCOLOR}"
+        echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
     else
-        read -p "Install $package_name? (Y/n): " response
+        echo -n -e "Install ${BOLDBLUE}$package_name?${ENDCOLOR} (Y/n): "
+        read response
         # Default Yes - check for response
         if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
             echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-            echo "not force"
             # actually install the package here
-            echo -e "${GREEN}$package_name successfully installed${ENDCOLOR}"
+            echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
         else
             echo "Skipping $package_name"
             return
