@@ -9,6 +9,8 @@ BOLDBLUE="\e[1;36m" # File names
 ITALICRED="\e[3;31m" # Errors
 ENDCOLOR="\e[0m" # Return
 
+ALL_PACKAGES=("wordle" "tree" "todo")
+
 # echo -e "${ITALICRED}Error: $error_msg${ENDCOLOR}"
 
 echo -e "\n${GREEN}Beginning setup ...${ENDCOLOR}"
@@ -21,31 +23,73 @@ sleep 0.1
 
 echo -e "Base commands echoed to ${BOLDBLUE}$file${ENDCOLOR}\n"
 
-
-echo "Choose what packages you would like."
-
-
-
 function install_package() {
-    local package_name="$1"
-    read -p "Install $package_name? (Y/n): " response
+    local install_all=false
+    local force_install=false
+    local package_name=""
 
-    # Default Yes - check for response
-    if [["$response" =~ ^[Yy]$ || -z "$response"]]; then
-        echo "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-        # actually install the package here
-    else
-        echo -e "${ITALICRED}Error: $error_msg${ENDCOLOR}"
+    #parse options
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -a|--all) install_all=true ;;
+            -f|--force) force_install=true ;;
+            *) package_name="$1" ;;
+        esac
+        shift
+    done
+
+    if $install_all; then
+        for item in "${ALL_PACKAGES[@]}"; do
+            install_package -f "$item" # skip prompt
+            sleep 0.05
+        done
+        return
     fi
-}   
 
-function install_all() {
-    install_package "wordle"
-    install_package "tree"
-    install_package "todo"
+    if [[ -z "$package_name" ]]; then
+        echo -e "${ITALICRED}Error: No package name provided and '-a' not used.${ENDCOLOR}"
+        return 1
+    fi
+
+    local valid_package=false
+    for item in "${ALL_PACKAGES[@]}"; do
+        if [[ "$item" == "$package_name" ]]; then
+            valid_package=true
+            break
+        fi
+    done
+
+    if ! $valid_package; then
+        echo -e "${ITALICRED}Error: '$package_name' is not an available package${ENDCOLOR}"
+        return 1
+    fi
+
+    if $force_install; then
+        echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
+        # actually install the package here
+        echo -e "${GREEN}$package_name successfully installed${ENDCOLOR}"
+    else
+        read -p "Install $package_name? (Y/n): " response
+        # Default Yes - check for response
+        if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
+            echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
+            echo "not force"
+            # actually install the package here
+            echo -e "${GREEN}$package_name successfully installed${ENDCOLOR}"
+        else
+            echo "Skipping $package_name"
+            return
+        fi
+    fi
 }
 
-
-
+echo "Choose what packages you would like."
+read -p "Install all packages? (Y/n): " response
+# Default Yes - check for response
+if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
+    install_package -a
+else
+    install_package "tree"
+fi
 
 
