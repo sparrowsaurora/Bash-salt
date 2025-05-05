@@ -13,15 +13,9 @@ ALL_PACKAGES=("wordle" "tree" "todo")
 
 # echo -e "${ITALICRED}Error: $error_msg${ENDCOLOR}"
 
-echo -e "\n${GREEN}Beginning setup ...${ENDCOLOR}"
-
-# add aliases to .bashrc
-file="test.txt"
-touch $file
-cat .bashrc > $file
-sleep 0.1
-
-echo -e "Base commands echoed to ${BOLDBLUE}$file${ENDCOLOR}\n"
+# -----------------------
+#  Function Definitions
+# -----------------------
 
 function install_package() {
     local install_all=false
@@ -41,7 +35,6 @@ function install_package() {
     if $install_all; then
         for item in "${ALL_PACKAGES[@]}"; do
             install_package -f "$item" # skip prompt
-            sleep 0.05
         done
         return
     fi
@@ -66,7 +59,7 @@ function install_package() {
 
     if $force_install; then
         echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-        # actually install the package here
+        # actually install the package here -----------------------------------------------------------
         echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
     else
         echo -n -e "Install ${BOLDBLUE}$package_name?${ENDCOLOR} (Y/n): "
@@ -74,7 +67,7 @@ function install_package() {
         # Default Yes - check for response
         if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
             echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-            # actually install the package here
+            # actually install the package here ---------------------------------------------------------
             echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
         else
             echo "Skipping $package_name"
@@ -83,13 +76,37 @@ function install_package() {
     fi
 }
 
+# -----------------------
+#  Main
+# -----------------------
+
+# Start up
+echo -e "\n${GREEN}Beginning setup ...${ENDCOLOR}"
+
+# add aliases to .bashrc
+file="test.txt"
+touch $file
+cat .bashrc > $file
+sleep 0.1
+
+echo -e "Base commands echoed to ${BOLDBLUE}$file${ENDCOLOR}\n"
+
+# Choose Packages
 echo "Choose what packages you would like."
 read -p "Install all packages? (Y/n): " response
 # Default Yes - check for response
 if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
     install_package -a
 else
-    install_package "tree"
+    for package in ${ALL_PACKAGES[@]}; do
+        install_package $package
+    done
 fi
 
-
+# Offer Guide
+read -p  "Would you like to download the docs? (Y/n): " response
+# Default Yes - check for response
+if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
+    cp ./bash-salt_guide.md ~/bash-salt_guide.md
+fi
+    
