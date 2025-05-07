@@ -7,23 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
+    <!--CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
     <!-- JavaScript -->
     <script src="app.js" defer></script>
     <!-- Title + Icon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Bash_Salt</title>
 </head>
-<body>
-    <header>
-        <div class="hero">
-            <h1></h1>
-            <h3></h3>
-            <button></button>
+<body class="bg-stone-900">
+    <header class="inline-flex w-full h-170">
+        <div class="hero text-center text-white p-20 w-7/5 bg-slate-500">
+            <h1 class="text-7xl font-semibold">Bash-Salt</h1>
+            <h3 class="text-xl">A BASH terminal extension to add a few extra commands</h3>
+            <button class="m-0 w-60 h-40"></button>
         </div>
-        <aside>
-
+        <aside class="w-full bg-lime-500">
+            <img src="placeholder" alt="placeholder" class="border-1 rounded">
         </aside>
     </header>
     <main>
@@ -37,11 +38,16 @@
 
         </div>
         <div class="final-cta">
-            
+
         </div>
     </main>
-    <footer>
-
+    <footer class="text-white text-center">
+        <div class="footer-main flex">
+            <div class="footersect w-auto border-1 border-white rounded m-3 grow" id="footersect1"></div>
+            <div class="footersect w-auto border-1 border-white rounded m-3 grow" id="footersect2"></div>
+            <div class="footersect w-auto border-1 border-white rounded m-3 grow" id="footersect3"></div>
+        </div>
+        <p>&copy; <span id="year"></span> | Sparrows_aurora</p>
     </footer>
 </body>
 </html>
