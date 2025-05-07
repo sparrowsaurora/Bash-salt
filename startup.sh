@@ -17,7 +17,7 @@ ALL_PACKAGES=("wordle" "tree" "todo")
 #  Function Definitions
 # -----------------------
 
-function install_package() {
+function install_package_request() {
     local install_all=false
     local force_install=false
     local package_name=""
@@ -58,22 +58,33 @@ function install_package() {
     fi
 
     if $force_install; then
-        echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-        # actually install the package here -----------------------------------------------------------
-        echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
+        install_package_action $package_name
     else
         echo -n -e "Install ${BOLDBLUE}$package_name?${ENDCOLOR} (Y/n): "
         read response
         # Default Yes - check for response
         if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
-            echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
-            # actually install the package here ---------------------------------------------------------
-            echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
+            install_package_action $package_name
         else
             echo "Skipping $package_name"
             return
         fi
     fi
+}
+
+function install_package_action() {
+    local package_name="$1"
+    local sh_file="$package_name/$package_name.sh"
+   
+    echo -e "Installing ${BOLDBLUE}$package_name...${ENDCOLOR}"
+
+    echo "Package files installing"
+    cp -r $package_name ~/$package_name
+    cat $sh_file > $file
+    echo "Removing excess"
+    rm $sh_file
+
+    echo -e "${BOLDBLUE}$package_name${ENDCOLOR}${GREEN} successfully installed${ENDCOLOR}"
 }
 
 # -----------------------
@@ -96,10 +107,10 @@ echo "Choose what packages you would like."
 read -p "Install all packages? (Y/n): " response
 # Default Yes - check for response
 if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
-    install_package -a
+    install_package_request -a
 else
     for package in ${ALL_PACKAGES[@]}; do
-        install_package $package
+        install_package_request $package
     done
 fi
 

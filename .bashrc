@@ -19,3 +19,8 @@ function view() {
 function mkcd() {
     mkdir $1 && cd $1;
 }
+
+function rollback() {
+    git reset HEAD^
+    git push origin HEAD --force
+}
