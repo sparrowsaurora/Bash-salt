@@ -3,14 +3,15 @@
     <main class="bg-slate-500 text-white text-center">
 
         <header class="flex w-full h-170">
-            <div class="p-20 w-3/2">
+            <!-- -w-3/2 -->
+            <div class="p-20 w-full">
                 <h1 class="text-7xl font-semibold">Bash-Salt</h1>
                 <h3 class="text-xl m-4 mt-0">A BASH terminal extension to add a few extra commands</h3>
                 <button class="download m-auto">Download</button>
             </div>
-            <aside class="w-full">
+            <!-- <aside class="w-full">
                 <img src="placeholder" alt="placeholder" class="border-1 rounded">
-            </aside>
+            </aside> -->
         </header>
 
         <div class="what-it-is flex bg-gray-200 text-black">
@@ -30,6 +31,6 @@
             <h2 class="text-5xl font-semibold">Last chance... I promise it's not that bad</h2>
             <button class="download m-5">Download</button>
         </div>
-        
+
     </main>
 <?php include"./include/footer.php"; ?>
