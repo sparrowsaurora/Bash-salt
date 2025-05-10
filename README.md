@@ -4,6 +4,11 @@ _A play on words of Bassalt, what i origionally wanted to call it._
 
 This project was made to add some cool functions to BASH
 
+## From the Dev
+
+currently testing locally "http://bash-salt.test/"
+
+
 ## Projects
 
 _List of projects currently available_

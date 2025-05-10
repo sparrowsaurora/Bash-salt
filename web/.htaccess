@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Route /docs to pages/docs/index.php
+RewriteRule ^docs/?$ pages/docs/index.php [L]
+
+# Route / to index.php
+RewriteRule ^$ index.php [L]
+
+# Optional: Add more custom routes
+# RewriteRule ^about/?$ pages/about.php [L]
