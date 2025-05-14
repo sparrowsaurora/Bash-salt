@@ -1,11 +1,24 @@
 RewriteEngine On
 RewriteBase /
 
-# Route /docs to pages/docs/index.php
-RewriteRule ^docs/?$ pages/docs/index.php [L]
-
 # Route / to index.php
+
 RewriteRule ^$ index.php [L]
 
-# Optional: Add more custom routes
-# RewriteRule ^about/?$ pages/about.php [L]
+# Route /docs to pages/docs/index.php
+
+RewriteRule ^docs/?$ pages/docs/index.php [L]
+
+# Route /download to pages/download/index.php
+
+RewriteRule ^download/?$ pages/download/index.php [L]
+
+# Route /library to pages/library/index.php
+
+RewriteRule ^library/?$ pages/library/index.php [L]
+
+# Route /contact to pages/contact/index.php
+
+RewriteRule ^contact/?$ pages/contact/index.php [L]
+
+<!-- # RewriteRule ^about/?$ pages/about.php [L] -->

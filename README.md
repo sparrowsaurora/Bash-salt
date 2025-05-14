@@ -8,7 +8,6 @@ This project was made to add some cool functions to BASH
 
 currently testing locally "http://bash-salt.test/"
 
-
 ## Projects
 
 _List of projects currently available_

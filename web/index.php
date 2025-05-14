@@ -31,6 +31,9 @@
             <h2 class="text-5xl font-semibold">Last chance... I promise it's not that bad</h2>
             <button class="download m-5">Download</button>
         </div>
-
+        <div class="feedback flex">
+            <h2 class="text-5xl font-semibold">Give me some feedback</h2>
+            <button>think of a funny remark</button>
+        </div>
     </main>
 <?php include"./include/footer.php"; ?>
