@@ -1,4 +1,5 @@
-- make a features page to show off what each indiviual package can do?
+- make a features page to show off what each indiviual package can do? like a full page for each package
+- add wayyyyy more css
 
 ### Note to Dev
 

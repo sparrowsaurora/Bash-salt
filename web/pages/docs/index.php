@@ -1,10 +1,11 @@
-<?php include"../../include/doc_items.php"; ?>
+<?php include"../../include/package_data.php"; ?>
 <?php include"../../include/header.php"; ?>
     <?php include"../../include/nav.php"; ?>
     <main>
         <?php 
-        foreach ($doc_items as $title => $content) {
-            echo "<h1>$title</h1> : $content <br>";
+        foreach ($package as $title => $data) {
+            $content = $data[1];
+            echo "<h1>$title</h1><br>$content";
         }
         ?>
     </main>

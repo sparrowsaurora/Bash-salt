@@ -1,4 +1,5 @@
 <!-- a new page for small description and images of each module with subheaddings on catagory -->
+<?php include"../../include/package_data.php"; ?>
 <?php include"../../include/header.php"; ?>
     <?php include"../../include/nav.php"; ?>
     <main>
