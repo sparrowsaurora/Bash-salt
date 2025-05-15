@@ -1,5 +1,4 @@
 <?php include"../../include/header.php"; ?>
-    <?php include"../../include/nav.php"; ?>
     <main class="grid place-items-center w-full h-dvh">
         <div class="w-4/5 h-4/5 bg-red-500 text-white grid place-items-center font-bold">
             <div>

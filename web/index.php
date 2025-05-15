@@ -1,10 +1,10 @@
 <?php include"./include/header.php"; ?>
-    <?php include"./include/nav.php"; ?>
+    <?php include"include/nav.php"; ?>
     <main class="bg-slate-500 text-white text-center">
 
         <header class="flex w-full h-170">
             <!-- -w-3/2 -->
-            <div class="p-20 w-full">
+            <div class="p-40 w-full">
                 <h1 class="text-7xl font-semibold">Bash-Salt</h1>
                 <h3 class="text-xl m-4 mt-0">A BASH terminal extension to add a few extra commands</h3>
                 <button class="download m-auto">Download</button>

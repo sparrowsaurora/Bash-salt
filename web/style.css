@@ -28,3 +28,12 @@ button.download:active {
     left: 5px;
     box-shadow: 0 0 0 0;
 }
+
+.hidden-navbar {
+    transform: translateY(-100%);
+    /* Hides the navbar */
+}
+
+#navbar {
+    background: #1e2939b3;
+}
