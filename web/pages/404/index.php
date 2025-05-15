@@ -4,8 +4,9 @@
             <div>
                 <h1 class="text-6xl text-center mb-3">Error 404: Page Not Found</h1>
                 <br>
-                <a href="../../index.php" class="bg-stone-800 rounded p-5">Go To Home Page</a>  
+                <a href="/" class="bg-stone-800 rounded p-5">Go To Home Page</a>  
             </div>
         </div>
     </main>
+</body>
 </html>

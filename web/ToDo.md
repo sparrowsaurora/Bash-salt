@@ -4,6 +4,8 @@
 - add wayyyyy more css
 - add a commands page? for the preset commands
 
+- add responsive css
+
 ### Note to Dev
 
 the feedback form(s?) will need a small database.
