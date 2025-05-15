@@ -33,7 +33,7 @@
         </div>
         <div class="feedback flex">
             <h2 class="text-5xl font-semibold">Give me some feedback</h2>
-            <button>think of a funny remark</button>
+            <a href="./pages/contact/index.php" class="p-10 rounded bg-stone-700">think of a funny remark</a>
         </div>
     </main>
 <?php include"./include/footer.php"; ?>

@@ -4,3 +4,5 @@
 ### Note to Dev
 
 the feedback form(s?) will need a small database.
+
+figure out how to self-host webserver and database

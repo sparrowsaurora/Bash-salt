@@ -13,12 +13,16 @@ RewriteRule ^docs/?$ pages/docs/index.php [L]
 
 RewriteRule ^download/?$ pages/download/index.php [L]
 
+# Route /contact to pages/contact/index.php
+
+RewriteRule ^contact/?$ pages/contact/index.php [L]
+
 # Route /library to pages/library/index.php
 
 RewriteRule ^library/?$ pages/library/index.php [L]
 
-# Route /contact to pages/contact/index.php
+# Route /library/$item to /pages/packages/index.php?package=main
 
-RewriteRule ^contact/?$ pages/contact/index.php [L]
+RewriteRule ^library/([a-zA-Z0-9_-]+)$ pages/packages/index.php?package=$1 [L,QSA]
 
 <!-- # RewriteRule ^about/?$ pages/about.php [L] -->
