@@ -12,4 +12,4 @@
     <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
     <title>Bash-salt</title>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">

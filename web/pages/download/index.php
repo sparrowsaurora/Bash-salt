@@ -8,17 +8,15 @@ $fun_facts = array(
 );
 
 include"../../include/header.php"; 
+include"../../include/nav.php"; 
 ?>
-    <?php include"../../include/nav.php"; ?>
-    <main style="height: 97.4vh;"> <!-- EDIT TO BE 100% of DVH -->
-        <div class="flex items-center justify-center size-full">
-            <div class="text-center">
-                <h2 class="font-semibold text-6xl mb-5">Download Bash-salt</h2>
-                <?php include"../../include/download_btn.php"; ?>
-                <h3 class="mt-50 font-semibold text-3xl underline decoration-dashed">Fun Fact</h3>
-                <p class="mt-5 text-lg">
-                    <?= $fun_facts[array_rand($fun_facts)];?>
-                </p>
-            </div>
-        </div>
+<main class="flex-grow flex items-center justify-center size-full"> <!-- EDIT TO BE 100% of DVH -->
+    <div class="text-center">
+        <h2 class="font-semibold text-6xl mb-5">Download Bash-salt</h2>
+        <?php include"../../include/download_btn.php"; ?>
+        <h3 class="mt-50 font-semibold text-3xl underline decoration-dashed">Fun Fact</h3>
+        <p class="mt-5 text-lg">
+            <?= $fun_facts[array_rand($fun_facts)];?>
+        </p>
+    </div>
 <?php include"../../include/footer.php"; ?>
