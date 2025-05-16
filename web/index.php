@@ -68,5 +68,4 @@
             <h2 class="text-4xl font-semibold mr-5">Give me some feedback</h2>
             <a href="/contact/" class="p-5 rounded-lg bg-gray-700 ml-5">think of a funny remark</a>
         </div>
-    </main>
 <?php include"include/footer.php"; ?>

@@ -9,5 +9,4 @@
             <form action="" method="POST"></form>
         </div>
         <a href="../../assets/Ryan_Kelley_Software_Engineer.pdf" class="my-resume">See my Resume</a>
-    </main>
 <?php include"../../include/footer.php"; ?>

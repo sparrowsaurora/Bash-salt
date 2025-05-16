@@ -3,10 +3,10 @@
         <a href="/" class="text-2xl tracking-widest font-semibold">Bash-Salt</a>
     </div>
     <div class="flex space-x-4 mr-5">
-        <a href="/docs/" class="text-lg tracking-wider">Docs</a>
-        <a href="/library/" class="text-lg tracking-wider">Library</a>
-        <a href="/download/" class="text-lg tracking-wider">Download</a>
-        <a href="/contact/" class="text-lg tracking-wider">Contact</a>
+        <a href="/docs/" class="text-lg tracking-wider px-3 py-1 hover:bg-gray-400 rounded-lg">Docs</a>
+        <a href="/library/" class="text-lg tracking-wider px-3 py-1 hover:bg-gray-400 rounded-lg">Library</a>
+        <a href="/download/" class="text-lg tracking-wider px-3 py-1 hover:bg-gray-400 rounded-lg">Download</a>
+        <a href="/contact/" class="text-lg tracking-wider px-3 py-1 hover:bg-gray-400 rounded-lg">Contact</a>
     </div>
 </nav>
 

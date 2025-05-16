@@ -21,5 +21,4 @@
             HTML;
         }
         ?>
-    </main>
 <?php include"../../include/footer.php"; ?>

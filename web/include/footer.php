@@ -6,5 +6,6 @@
         </div> -->
         <p class="text-white text-center">&copy; <span id="year"></span> | Sparrows_aurora</p>
     </footer>
+</main>
 </body>
 </html>
