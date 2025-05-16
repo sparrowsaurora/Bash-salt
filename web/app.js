@@ -14,3 +14,14 @@ window.addEventListener('scroll', () => {
     }
     lastScroll = currentScroll;
 });
+
+function downloadFile() {
+    const link = document.createElement("a");
+    link.href = "/assets/versions/test.png"; // Change this to your file path
+    link.download = "filename.png";       // Optional: set custom filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    console.log("btn clicked")
+};
+

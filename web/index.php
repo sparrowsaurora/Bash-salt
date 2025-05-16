@@ -7,7 +7,7 @@
             <div class="p-40 w-full">
                 <h1 class="text-7xl font-semibold">Bash-Salt</h1>
                 <h3 class="text-xl m-4 mt-0">A BASH terminal extension to add a few extra commands</h3>
-                <button class="download m-auto">Download</button>
+                <?php include"./include/download_btn.php"; ?>
             </div>
             <!-- <aside class="w-full">
                 <img src="placeholder" alt="placeholder" class="border-1 rounded">
@@ -61,7 +61,7 @@
 
         <div class="final-cta">
             <h2 class="text-5xl font-semibold">Last chance... I promise it's not that bad</h2>
-            <button class="download m-5">Download</button>
+            <?php include"./include/download_btn.php"; ?>
         </div>
 
         <div class="feedback flex py-15 items-center justify-center">
