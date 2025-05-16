@@ -10,7 +10,7 @@ $fun_facts = array(
 include"../../include/header.php"; 
 include"../../include/nav.php"; 
 ?>
-<main class="flex-grow flex items-center justify-center size-full"> <!-- EDIT TO BE 100% of DVH -->
+<main class="flex-grow flex items-center justify-center size-full">
     <div class="text-center">
         <h2 class="font-semibold text-6xl mb-5">Download Bash-salt</h2>
         <?php include"../../include/download_btn.php"; ?>

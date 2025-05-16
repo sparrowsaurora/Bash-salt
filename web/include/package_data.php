@@ -14,8 +14,8 @@
 
 // Dummy Data
 $package_data = array(
-    "title" => [
-        ['image.jpg', 'placeholder alt text'],
+    "Tree" => [
+        ['../images/tree.png', 'Tree module file-map image'],
         'small summary here',
         'content && how to use the commands etc.'
     ],
@@ -23,5 +23,20 @@ $package_data = array(
         ['image2.jpg', 'placeholder alt text2'],
         'small summary2 here',
         'content2 && how to use the commands etc.'
+    ],
+    "Tree2" => [
+        ['../images/tree.png', 'Tree module file-map image'],
+        'small summary here',
+        'content && how to use the commands etc.'
+    ],
+    "Tree3" => [
+        ['../images/tree.png', 'Tree module file-map image'],
+        'small summary here',
+        'content && how to use the commands etc.'
+    ],
+    "Tree4" => [
+        ['../images/tree.png', 'Tree module file-map image'],
+        'small summary here',
+        'content && how to use the commands etc.'
     ]
 );
