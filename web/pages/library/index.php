@@ -16,7 +16,7 @@
 
 
             echo <<<HTML
-            <div class="flex m-10 h-50"> <!-- Potentially a link to the product page? -->
+            <div class="flex m-10 h-50"> <!-- Potentially a link to the package page? -->
                 <img src="../../images/$image" alt="$alt" class="h-full rounded-xl">
                 <div class="flex items-start justify-end h-full flex-col pb-5"> 
                     <h2 class="font-semibold text-5xl ml-3 underline decoration-dashed">$title</h2>
