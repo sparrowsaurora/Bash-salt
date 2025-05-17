@@ -8,6 +8,8 @@ alias gl='git log --oneline --decorate --all'
 
 alias b='cd ..'
 
+alias sr='cd ~/source/repos'
+
 function git-a() {
     git add . && git commit -m "$";
 }

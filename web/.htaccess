@@ -22,7 +22,7 @@ RewriteRule ^contact/?$ pages/contact/index.php [L]
 
 RewriteRule ^library/?$ pages/library/index.php [L]
 
-RewriteRule ^library/([a-zA-Z0-9_-]+)/?$ pages/packages/index.php?package=$1 [L,QSA]
+RewriteRule ^library/([a-zA-Z0-9_-]+)/?$ pages/package/index.php?package=$1 [L,QSA]
 
 RewriteRule ^404/?$ pages/404/index.php [L]
 
