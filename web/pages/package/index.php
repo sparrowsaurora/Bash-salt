@@ -1,5 +1,4 @@
 <?php 
-
 $package_name = $_GET['package'];
 
 if (!isset($package_data[$package_name])) {
@@ -15,7 +14,6 @@ if (!isset($package_data[$package_name])) {
     $content = $data[2];       // 'content && how to use the commands etc.'
     $documentation = $data[3]; // 'lorem ipsum; Documentation text here'
 }
-
 
 include"../../include/header.php";
 include"../../include/nav.php"; 
