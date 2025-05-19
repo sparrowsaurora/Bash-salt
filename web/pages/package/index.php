@@ -20,13 +20,13 @@ include"../../include/nav.php";
 ?>
     <main class="flex-grow flex items-center justify-center size-full flex-col">
         <div class="">
-            <h1>$title</h1>
-            <h2>$summary</h2>
-            <img src="$hero_image" alt="$alt_text">
-            <p>$content</p>
+            <h1><?=$title?></h1>
+            <h2><?=$summary?></h2>
+            <img src="<?=$hero_image?>" alt="<?=$alt_text?>">
+            <p><?=$content?></p>
             <p>--------------------------------------</p>
             <h2>Documentation:</h2>
-            <p>$documentation</p>
+            <p><?=$documentation?></p>
         </div>
 
 <?php include"../../include/footer.php"; ?>
