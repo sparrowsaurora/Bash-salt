@@ -60,12 +60,12 @@
         </div>
 
         <div class="final-cta">
-            <h2 class="text-5xl font-semibold">Last chance... I promise it's not that bad</h2>
+            <h2 class="text-5xl font-semibold mb-5">Last chance... I promise it's not that bad</h2>
             <?php include"./include/download_btn.php"; ?>
         </div>
 
         <div class="feedback flex py-15 items-center justify-center">
             <h2 class="text-4xl font-semibold mr-5">Give me some feedback</h2>
-            <a href="/contact/" class="p-5 rounded-lg bg-gray-700 ml-5">think of a funny remark</a>
+            <a href="/contact/" class="p-5 rounded-lg bg-gray-700 ml-5">Tell me what went wrong this time</a>
         </div>
 <?php include"include/footer.php"; ?>

@@ -34,52 +34,52 @@ if(isset($_POST['submit_email'])) {
 ?>
 
 <div class="contact-me">
-            <form action="/contact/" method="POST" class="mt-4 w-75">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input
-                        type="text"
-                        class="form-control <?= !$nameErr ?: 'is-invalid'; ?>"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                    />
-                    <div class="invalid-feedback">
-                        <?= $nameErr; ?>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input
-                        type="email"
-                        class="form-control <?= !$emailErr ?: 'is-invalid'; ?>"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                    />
-                    <div class="invalid-feedback">
-                        <?= $emailErr; ?>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="body" class="form-label">Content</label>
-                    <textarea
-                        class="form-control <?= !$bodyErr ?: 'is-invalid'; ?>"
-                        id="body"
-                        name="body"
-                        placeholder="Enter your Email content"
-                    ></textarea>
-                    <div class="invalid-feedback">
-                        <?= $bodyErr; ?>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <input
-                        type="submit"
-                        name="submit_email"
-                        value="Send Email"
-                        class="btn btn-dark w-100"
-                    />
-                </div>
-            </form>
+    <form action="/contact/" method="POST" class="mt-4 w-75">
+        <div class="mb-3">
+            <label for="name" class="mr-3">Name:</label>
+            <input
+                type="text"
+                class="border rounded <?= !$nameErr ?: 'text-red-600 font-medium'; ?>"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+            />
+            <div class="bg-red-200 rounded-lg text-center text-red-700 font-medium my-1">
+                <?= $nameErr; ?>
+            </div>
         </div>
+        <div class="mb-3">
+            <label for="email" class="mr-4">Email:</label>
+            <input
+                type="email"
+                class="border rounded <?= !$nameErr ?: 'text-red-600 font-medium'; ?>"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+            />
+            <div class="bg-red-200 rounded-lg text-center text-red-700 font-medium my-1">
+                <?= $emailErr; ?>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="body" class="form-label">Content:</label>
+            <textarea
+                class="border rounded w-full h-15 <?= !$nameErr ?: 'text-red-600 font-medium'; ?>"
+                id="body"
+                name="body"
+                placeholder="Enter your email content"
+            ></textarea>
+            <div class="bg-red-200 rounded-lg text-center text-red-700 font-medium my-1">
+                <?= $bodyErr; ?>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input
+                type="submit"
+                name="submit_email"
+                value="Send Email"
+                class="w-full bg-slate-500 py-2 rounded-lg font-semibold text-white"
+            />
+        </div>
+    </form>
+</div>
