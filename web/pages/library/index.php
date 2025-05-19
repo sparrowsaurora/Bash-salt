@@ -9,15 +9,21 @@
         <?php 
         foreach ($package_data as $title => $data) {
             $title = ucwords(strtolower("$title"), ".-/ ");
-            $image = $data[0][0];
+            $image = '../../images/' . $data[0][0];
+            if(!file_exists($image)) {
+                $image = '../../images/default.png';
+            }
             $alt = $data[0][1];
+            if($alt == "") {
+                $alt = "No image attached to project: $title";
+            }
             $summary = $data[1];
             $content = $data[2];
 
 
             echo <<<HTML
             <div class="flex m-10 h-50"> <!-- Potentially a link to the package page? -->
-                <img src="../../images/$image" alt="$alt" class="h-full rounded-xl">
+                <img src="$image" alt="$alt" class="h-full rounded-xl">
                 <div class="flex items-start justify-end h-full flex-col pb-5"> 
                     <h2 class="font-semibold text-5xl ml-3 underline decoration-dashed">$title</h2>
                     <sub class="text-xl ml-3">$summary</sub>
