@@ -34,7 +34,7 @@ if(isset($_POST['submit_feedback'])) {
 ?>
 
 <div class="feedback-form mb-20">
-            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="mt-4 w-75">
+            <form action="/contact/" method="POST" class="mt-4 w-75">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input
