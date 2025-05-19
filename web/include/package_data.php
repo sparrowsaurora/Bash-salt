@@ -13,36 +13,27 @@
 //      ],
 //  ]
 
-// Dummy Data
+/*
+Dummy Data Example:
+
+"Test" => [
+        ['test.png', ''],
+        'small summary',
+        'General content/infomation & how to use the commands etc.',
+        'Documentation and more extensive information on commands'
+    ],
+*/
+
+// add ability to use \n in here
+
 $package_data = array(
     "Tree" => [
         ['tree.png', 'Tree module file-map image'],
-        'small summary here',
-        'content && how to use the commands etc.',
+        'A file mapping tool that displays a stylistic text-based display of the file map',
+        'A tool that displays a map of the files in a specified directory. 
+        It\'s a smooth, readable and text-based display which either shows on the terminal or saves to a file depending on the flags given. 
+        // NOTE ENTER FLAG DETAILS HERE',
         'lorem ipsum; Documentation text here'
     ],
-    "title2" => [
-        ['image2.jpg', ''],
-        'small summary2 here',
-        'content2 && how to use the commands etc.',
-        'lorem ipsum; Documentation text here'
-    ],
-    "Tree2" => [
-        ['tree.png', 'Tree module file-map image'],
-        'small summary here',
-        'content && how to use the commands etc.',
-        'lorem ipsum; Documentation text here'
-    ],
-    "Tree3" => [
-        ['tree.png', 'Tree module file-map image'],
-        'small summary here',
-        'content && how to use the commands etc.',
-        'lorem ipsum; Documentation text here'
-    ],
-    "Tree4" => [
-        ['tree.png', 'Tree module file-map image'],
-        'small summary here',
-        'content && how to use the commands etc.',
-        'lorem ipsum; Documentation text here'
-    ],
+
 );
