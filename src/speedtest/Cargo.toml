@@ -1,0 +1,10 @@
+[package]
+name = "speedtest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ureq = "2.9"
+indicatif = "0.17"
+prettytable = "0.10"
+
