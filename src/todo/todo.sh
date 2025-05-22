@@ -1,4 +1,4 @@
 function todo() {
-    python ~/source/repos/Bash-salt/todo/main.py;
+    python ~/source/repos/Bash-salt/src/todo/main.py;
     # link todo project
 }

@@ -1,0 +1,11 @@
+{
+    "profile": {
+        "username": "sparrow",
+        "email": "7"
+    },
+    "details": {
+        "bashrc_location": "/c/Users/Sparrow/.bashrc",
+        "installed_packages": ["wordle", "tree"]
+    },
+    "version": "1.0.0"
+}
