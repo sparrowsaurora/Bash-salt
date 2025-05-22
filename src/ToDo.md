@@ -1,6 +1,6 @@
 # To Do
 
-- make the actuallyinstalls work for installing each dir - change to rust? (compiled language)
+- make the actuall installs work for installing each dir - change to rust? (compiled language)
 
 ## tree
 
