@@ -6,7 +6,11 @@ This project was made to add some cool functions to BASH
 
 ## From the Dev
 
-currently testing locally "http://bash-salt.test/"
+currently testing locally "http://bash-salt.test/"'
+
+### NOTE::
+
+This project only supports BASH on Windows systems currently.
 
 ## Projects
 
@@ -29,6 +33,7 @@ Exactly what it sounds like...
 ### **Developer Tools**
 
 1. **Code Snippet Manager** – Save, search, and manage code snippets with tags and descriptions.
+2. **CLI Info** – Get Destailed descriptions on any command with more than just the '--help' screen.
 
 ### **System Utilities**
 
@@ -49,7 +54,6 @@ Exactly what it sounds like...
 1. **CLI Weather App** – Fetches weather forecasts using an API.
 2. **Website Uptime Monitor** – Periodically pings websites and alerts on downtime.
 3. **RSS Reader** – Fetches and displays articles from your favorite RSS feeds.
-4. **CLI Speed Test** – Measures internet speed using a simple command.
 
 ### **Fun & Miscellaneous**
 
@@ -65,9 +69,15 @@ Exactly what it sounds like...
     "c" = clear
     "b" = cd ..
     "gl" = git log --oneline --decorate --all
-    "git-a" = git add . && git commit -m $
     "mkcd" = mkdir $ && cd $
     "view" = cd $ && la && b
-    "todo" = todo
-    "wordle" = a wordle game
-    "tree" = prints a file tree
+    "sr" = cd ~/source/repos
+    "rollback" = git reset HEAD^ && git push origin HEAD --force
+
+## Packages
+
+    ToDo -> A CLI based multipage to-do list
+    Wordle -> a wordle game
+    Tree -> prints a file tree/map
+    Speed Test –> Measures internet speed using a simple command.
+    Create Project -> Bash scripts to Fast launch the start of your project in any framework
