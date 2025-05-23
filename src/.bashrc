@@ -10,9 +10,11 @@ alias b='cd ..'
 
 alias sr='cd ~/source/repos'
 
-function git-a() {
-    git add . && git commit -m "$";
-}
+alias h='cd ~'
+
+# function git-a() {
+#     git add . && git commit -m "$";
+# }
 
 function view() {
     cd $1 && la && b;
