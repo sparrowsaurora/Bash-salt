@@ -1,25 +1,38 @@
+use clap::{Arg, Command};
 use reqwest::blocking::get;
-use std::{env, thread, time};
-
-// let now = time::Instant::now();
+use std::{thread, time};
 
 fn main() {
     // set url from argv cmdl
-    let args: Vec<string> = env::args().collect();
-    if args.len() < 2 {
-        eprintln!("Usage: {} <url>", args[0]);
-        std::process::exit(1);
-    }
+    let matches = Command::new("uptime_monitor")
+        .about("Checks the uptime of a URL on an interval")
+        .arg(
+            Arg::new("url")
+                .help("The website URL to ping")
+                .required(true)
+                .index(1),
+        )
+        .arg(
+            Arg::new("interval")
+                .short('i')
+                .long("interval")
+                .help("Interval in minutes between pings")
+                .default_value("60")
+                .value_parser(clap::value_parser!(u64)),
+        )
+        .get_matches();
 
-    let url = &args[1];
+    let url = matches.get_one::<String>("url").unwrap();
     if !url.starts_with("http://") && !url.starts_with("https://") {
         eprintln!("Error: URL must start with http:// or https://");
         std::process::exit(1);
     }
+    let interval_minutes = matches.get_one::<u64>("interval").unwrap();
+    let interval_secs = interval_minutes * 60;
 
     let stop = false;
     let interval: u64 = 3600;
-    let pause_time = time::Duration::from_secs(interval);
+    let pause_time = time::Duration::from_secs(interval_secs);
     let mut times_ran: u8 = 0;
     let mut response_total: u8 = 0;
 
