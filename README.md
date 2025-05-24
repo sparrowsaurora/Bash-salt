@@ -12,22 +12,6 @@ currently testing locally "http://bash-salt.test/"'
 
 This project only supports BASH on Windows systems currently.
 
-## Projects
-
-_List of projects currently available_
-
-### To Do
-
-A local multi-session to-do list.
-
-### Tree
-
-A file structure mapper to make a tree of the following directories and files
-
-### Wordle
-
-Exactly what it sounds like...
-
 ## Future Projects
 
 ### **Developer Tools**
@@ -52,8 +36,7 @@ Exactly what it sounds like...
 ### **Internet & Networking**
 
 1. **CLI Weather App** – Fetches weather forecasts using an API.
-2. **Website Uptime Monitor** – Periodically pings websites and alerts on downtime.
-3. **RSS Reader** – Fetches and displays articles from your favorite RSS feeds.
+2. **RSS Reader** – Fetches and displays articles from your favorite RSS feeds.
 
 ### **Fun & Miscellaneous**
 
