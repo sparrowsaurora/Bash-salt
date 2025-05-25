@@ -11,3 +11,13 @@
 ## wordle
 
 - add a way to open a venv and close it after running scripts like wordle
+
+### Remaining packages to add for v-1
+
+None:
+
+edit current packages to work
+
+finalise setup procedure
+
+testing
