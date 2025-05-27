@@ -1,7 +1,5 @@
 # pip install termcolor
 
-
-
 def print_instructions():
     '''
         welcome instructions
@@ -180,8 +178,8 @@ def main(target_word):
 from random import choice
 from termcolor import cprint
 
-ALL_WORDS = "~/source/repos/Bash-salt/wordle/all_words.txt"
-TARGET_WORDS = "~/source/repos/Bash-salt/wordle/target_words.txt"
-WORDLE_GUESSES = "~/source/repos/Bash-salt/wordle/wordle_guesses.txt"
+ALL_WORDS = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/all_words.txt"
+TARGET_WORDS = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/target_words.txt"
+WORDLE_GUESSES = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/wordle_guesses.txt"
 
 main(target_word())
