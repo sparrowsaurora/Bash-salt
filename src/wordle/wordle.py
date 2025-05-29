@@ -1,28 +1,40 @@
-# pip install termcolor
+# Replacing Termcolor with ANSI codes
+RED = "\033[0;31m"
+GREEN = "\033[0;32m"
+CYAN = "\033[0;36m"
+LIGHT_GRAY = "\033[0;37m"
+YELLOW = "\033[1;33m"
+BOLD = "\033[1m"
+FAINT = "\033[2m"
+UNDERLINE = "\033[4m"
+END = "\033[0m"
 
 def print_instructions():
     '''
         welcome instructions
     '''
-    cprint("Welcome to the Word Guessing Game!", 'cyan')
+    print(f"{CYAN}Welcome to the Word Guessing Game!{END}")
     print("Guess the 5-letter word within 6 attempts.")
     print("After each guess, you'll see feedback in colors:")
     colour_refernce_instructions()
-    print("\nif you need help, type 'help'")
+    print("if you need help, type 'help'")
     print("Good luck and have fun!")
 
 def colour_refernce_instructions():
     '''
         colours instructions for print_instructions()
     '''
-    colour_references = [
-        ["Green", "= correct, "],
-        ["Yellow", "= wrong position, "],
-        ["Red", "= not in word."]
-    ]
+    print(f"{GREEN}Green = Correct{END}")
+    print(f"{YELLOW}Yellow = Wrong Position{END}")
+    print(f"{RED}Red = Not in word{END}")
+    #colour_references = [
+     #   ["GREEN", "= correct, "],
+      #  ["YELLOW", "= wrong position, "],
+       # ["RED", "= not in word."]
+    #]
         
-    for reference in colour_references:
-        cprint(reference[0] + " " + reference[1], reference[0].lower(), end=" ")
+    #for reference in colour_references:
+     #   print(f"{reference[0]}{reference[0] + " " + reference[1]{END}, end=" ")
 
 def get_and_validate_guess(guess_count):
     '''
@@ -124,7 +136,8 @@ def print_list_of_past_words_coloured(past_guesses):
     # prints list of past words
     for guess in past_guesses:
         for letter, color in guess:
-            cprint(letter, color, end=" ")
+            color = globals()[color.upper()]
+            print(f"{color}{letter}{END}", end=" ")
         print()
 
 def check_for_end_condition(latest_guess, guess_count, target_word):
@@ -141,13 +154,13 @@ def target_word():
     target_word_file = open(TARGET_WORDS, "r")
     return choice(target_word_file.readlines())
 
-def total_guesses_to_file(guess_count, target_word):
-    '''
-        writes total guesses to file
-    '''
-    wordle_guesses = open(WORDLE_GUESSES, "a")
-    wordle_guesses.writelines("It took " + str(guess_count) + " guesses to guess the word " + target_word + "\n")
-    wordle_guesses.close()
+# def total_guesses_to_file(guess_count, target_word):
+#     '''
+#         writes total guesses to file
+#     '''
+#     wordle_guesses = open(WORDLE_GUESSES, "a")
+#     wordle_guesses.writelines("It took " + str(guess_count) + " guesses to guess the word " + target_word + "\n")
+#     wordle_guesses.close()
 
 def all_words():
     all_words_file = open(ALL_WORDS, "r")
@@ -173,13 +186,14 @@ def main(target_word):
         print_list_of_past_words_coloured(past_guesses)
 
         end_condition = check_for_end_condition(latest_guess, guess_count, target_word)
-    total_guesses_to_file(guess_count, target_word)
+    # total_guesses_to_file(guess_count, target_word)
+    print(f"It took {str(guess_count)} guesses to guess the word '{target_word}'")
 
 from random import choice
-from termcolor import cprint
+#from termcolor import cprint
 
-ALL_WORDS = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/all_words.txt"
-TARGET_WORDS = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/target_words.txt"
-WORDLE_GUESSES = "c:/Users/Sparrow/source/repos/Bash-salt/src/wordle/wordle_guesses.txt"
-
+ALL_WORDS = "src\\wordle\\all_words.txt"
+TARGET_WORDS = "src\\wordle\\target_words.txt"
+# WORDLE_GUESSES = "./wordle_guesses.txt"
+# src\wordle\target_words.txt
 main(target_word())

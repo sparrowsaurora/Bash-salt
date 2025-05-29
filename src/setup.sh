@@ -161,8 +161,6 @@ echo -e "${GREEN}Beginning setup ...${ENDCOLOR}"
 echo -e "\n##########################################
                  ${ITALICRED}WARNING${ENDCOLOR}
 SOME PACKAGES REQUIRE A PYTHON INTERPRETER
-THIS SETUP WILL INSTALL THE PYTHON PACKAGE
-                TERMCOLOR
 ##########################################\n"
 
 
