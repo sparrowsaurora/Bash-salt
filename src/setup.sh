@@ -18,7 +18,8 @@ ENDCOLOR="\e[0m" # Return
 # -----------------------
 
 CONFIG_FILE="./config.json"
-ALL_PACKAGES=("wordle" "tree" "todo") # list all packages here
+ALL_PACKAGES=("wordle" "tree" "create_project" "speedtest" "uptime_monitor" "on_startup") # list all packages here
+# TO ADD: todo
 INSTALLED_PACKAGES=()
 
 # -----------------------
@@ -199,16 +200,6 @@ if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
     # echo -e "${ITALICRED}Error: Logic still in development${ENDCOLOR}"
 else
     echo -e "Some packages Require $CONFIG_FILE.\nPlease complete at your earliest convenience" # underline this
-fi
-
-# Make config file
-read -p  "PIP will now install Termcolor for Wordle Package. Is this okay? (Y/n): " response
-# Default Yes - check for response
-if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
-    pip install termcolor
-    # echo -e "${ITALICRED}Error: Logic still in development${ENDCOLOR}"
-else
-    echo "Using the Wordle Project, if installed, will throw an error" # underline this
 fi
 
 echo -e "${GREEN}Setup Successful${ENDCOLOR}"
