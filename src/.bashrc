@@ -29,21 +29,21 @@ function rollback() {
     git push origin HEAD --force
 }
 
-function info() {
-    echo "OS: $(uname -a)"
-    echo "Kernel: $(uname -r)"
-    echo "CPU: $(lscpu | grep 'Model name')"
-    echo "RAM: $(free -h | grep 'Mem')"
-    echo "Disk: $(df -h | grep '/$')"
-}
+# function info() {
+#     echo "OS: $(uname -a)"
+#     echo "Kernel: $(uname -r)"
+#     echo "CPU: $(lscpu | grep 'Model name')"
+#     echo "RAM: $(free -h | grep 'Mem')"
+#     echo "Disk: $(df -h | grep '/$')"
+# }
 
-function ip() {
-    ifconfig | grep 'inet ' | awk '{print $2}'
-}
+# function ip() {
+#     ifconfig | grep 'inet ' | awk '{print $2}'
+# }
 
-function createvenv() {
+function nvenv() {
     if [ -z "$1" ]; then
-        echo "Usage: createenv <env_name>"
+        echo "Usage: nenv <env_name>"
         return 1
     fi
     echo "Creating Virtual environment <$1>"

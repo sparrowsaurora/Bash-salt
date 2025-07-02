@@ -32,6 +32,8 @@ touch config.py
 touch run.py
 touch .env
 touch .gitignore
+touch ReadMe.md
+touch ToDo.md
 
 # __init__.py
 cat <<EOF > app/__init__.py
@@ -117,12 +119,12 @@ EOF
 
 # Set up virtual environment
 print_msg "$CYAN" "Creating virtual environment..."
-python3 -m venv venv
+python -m venv .venv
 
 # Activate and install packages
-source venv/Scripts/activate
+source .venv/Scripts/activate
 print_msg "$CYAN" "Installing Flask and python-dotenv packages..."
-pip install Flask python-dotenv
+pip install Flask python-dotenv flask-bcrypt flask-login
 
 # Freeze requirements
 pip freeze > requirements.txt
@@ -135,4 +137,4 @@ print_msg "$YELLOW" "   source venv/bin/activate"
 print_msg "$YELLOW" "   python run.py"
 
 print_msg "$CYAN" " Recommended extra packages:"
-print_msg "$YELLOW" "   pip install flask-wtf flask-sqlalchemy flask-migrate flask-bcrypt flask-wtf flask-login"
+print_msg "$YELLOW" "   pip install flask-wtf flask-sqlalchemy flask-migrate"

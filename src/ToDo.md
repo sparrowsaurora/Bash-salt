@@ -6,10 +6,6 @@
 - add "-d" flag for printing a different dir.
 - also give the option for using "-f" for this different dir
 
-## todo
-
-- just fix it.
-
 ### Remaining packages to add for v-1
 
 Note:
