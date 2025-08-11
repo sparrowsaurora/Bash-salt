@@ -62,3 +62,5 @@ function deact() {
     deactivate
     echo "Virtual env is no longer active"
 }
+
+# Script to run startup

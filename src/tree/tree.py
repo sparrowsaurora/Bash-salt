@@ -87,10 +87,11 @@ def get_vars() -> tuple[str, list[str]]:
     else:
         directory = os.getcwd()
         enable_flag = False
-
     excluded_input = input(
         "Enter comma-separated file names to ignore (or leave blank): "
     )
+    excluded_input += '.git, target'
+    print(f"Excluding: {excluded_input}")
     excluded_files = (
         [file.strip() for file in excluded_input.split(",")]
         if excluded_input

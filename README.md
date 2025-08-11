@@ -45,7 +45,7 @@ This project only supports BASH on Windows systems currently.
 3. **Music Player** – Plays local music files with simple navigation.
 4. **Stock Visualiser** - gives me stock updates for the past day
 
-## Added BASH Commands
+## Added BASH Aliases
 
     "la" = ls -a
     "rf" = rm -rf
@@ -61,6 +61,6 @@ This project only supports BASH on Windows systems currently.
 
     ToDo -> A CLI based multipage to-do list
     Wordle -> a wordle game
-    Tree -> prints a file tree/map
-    Speed Test –> Measures internet speed using a simple command.
+    Tree -> prints a file tree/map (auto-exclusion of .git and target directories)
+    Speed Test -> Measures internet speed using a simple command.
     Create Project -> Bash scripts to Fast launch the start of your project in any framework
