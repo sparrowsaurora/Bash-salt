@@ -45,7 +45,7 @@ function install_package_request() {
     
     if $install_all; then
         for item in "${ALL_PACKAGES[@]}"; do
-            install_package -f "$item" # skip prompt
+            install_package_action -f "$item" # skip prompt
         done
         return
     fi
@@ -168,12 +168,19 @@ SOME PACKAGES REQUIRE A PYTHON INTERPRETER
 
 
 # add aliases to .bashrc
-file="test/bashrc.txt"
-touch $file
-cat .bashrc > $file
+bashrc_file="./test/bashrc.txt"
+touch $bashrc_file
+cat .bashrc >> $bashrc_file
+echo -e "Base commands echoed to ${BOLDBLUE}$bashrc_file${ENDCOLOR}\n"
+
+alias_file="./test/aliases.txt"
+touch $alias_file
+cat .aliases >> $alias_file
+echo -e "Base aliases echoed to ${BOLDBLUE}$alias_file${ENDCOLOR}\n"
+
+# small delay
 sleep 0.1
 
-echo -e "Base commands echoed to ${BOLDBLUE}$file${ENDCOLOR}\n"
 
 # Choose Packages
 echo "Choose what packages you would like."
