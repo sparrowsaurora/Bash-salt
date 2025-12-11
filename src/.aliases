@@ -1,0 +1,43 @@
+# packages
+alias ff='fastfetch'
+
+# main
+alias c='clear'
+alias sr='cd source/repos'
+alias b='cd ..'
+alias back='cd -'
+alias h='cd ~'
+alias la='ls -a'
+alias rf='rm -rf'
+alias md='mkdir -p'
+alias please='sudo $(history -p !!)'
+
+# bash
+alias reload='source ~/.bashrc'
+alias sbr='source ~/.bashrc'
+alias ebr='vim ~/.bashrc'
+alias eal='vim ~/.aliases'
+
+# git
+alias gl='git log --oneline --graph --decorate --all'
+alias gs='git status'
+
+# python
+alias py='python'
+alias pipu='pip install --upgrade'
+alias nvenv='python -v venv .venv'
+alias reqs='python -m pip install -r requirements.txt'
+alias act='source .venv/Scripts/activate'
+alias deact='deactivate'
+
+# php
+alias artisan='php artisan'
+alias lstart='composer install && npm install'
+alias lupdate='composer upgrade && npm update'
+alias crd='composer run dev'
+alias lfresh='php artisan migrate:fresh --seed'
+alias sg='artisan scribe:generate'
+
+# misc
+
+# new

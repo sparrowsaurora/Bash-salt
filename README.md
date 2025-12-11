@@ -7,13 +7,8 @@ _WARNING: All scripts in this tool are handmade and not overly specialised, and 
 
 ## From the Dev
 
-currently testing locally http://bash-salt.test/
+currently testing locally http://bash-salt.test/  
 Check out [ryankelley.dev/bashsalt](https://ryankelley.dev/bashsalt)... eventually
-
-### NOTE : :
-
-This project only supports BASH on Windows systems currently.
-We're currently adding Linux support and removing the need for a python interpreter.
 
 ## Installation
 
@@ -22,6 +17,11 @@ You can install via your (git)BASH cli by using the command
 ```shell
 curl -sfL https://ryankelley.dev/bashsalt/install.sh | sh
 ```
+
+### NOTE : :
+
+This project only supports BASH on Windows systems currently.
+We're currently adding Linux support and removing the need for a python interpreter.
 
 ## Added BASH Aliases
 
