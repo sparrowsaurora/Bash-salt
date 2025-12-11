@@ -3,6 +3,7 @@
 add compiled files --release
 
 - unix editions
-- windows editions
 
-testing
+add '--help' docs
+
+fix install script

@@ -1,9 +1,10 @@
 # Web Side To Do
 
 - make a features page to show off what each indiviual package can do? like a full page for each package
-- add wayyyyy more css
 - add a commands page? for the preset commands <- potentially the package page "main"
-- add responsive css
+
+- Redesign UI
+- Add script install tool
 
 ### Note to Dev
 

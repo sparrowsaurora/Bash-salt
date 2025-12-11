@@ -2,22 +2,51 @@
 
 _A play on words of Bassalt, what i origionally wanted to call it._
 
-This project was made to add some cool functions to BASH
+This project was made to add some cool functions to BASH.
+_WARNING: All scripts in this tool are handmade and not overly specialised, and therefore are only 'good enough'. If any functionality isnt up to your standard, please seek out the specialised replacement._
 
 ## From the Dev
 
-currently testing locally "http://bash-salt.test/"'
+currently testing locally http://bash-salt.test/
+Check out [ryankelley.dev/bashsalt](https://ryankelley.dev/bashsalt)... eventually
 
-### NOTE::
+### NOTE : :
 
 This project only supports BASH on Windows systems currently.
+We're currently adding Linux support and removing the need for a python interpreter.
+
+## Installation
+
+You can install via your (git)BASH cli by using the command
+
+```shell
+curl -sfL https://ryankelley.dev/bashsalt/install.sh | sh
+```
+
+## Added BASH Aliases
+
+```shell
+"la" = ls -a
+"rf" = rm -rf
+"c" = clear
+"b" = cd ..
+"gl" = git log --oneline --decorate --all
+"mkcd" = mkdir $ && cd $
+"view" = cd $ && la && b
+"sr" = cd ~/source/repos
+"rollback" = git reset HEAD^ && git push origin HEAD --force
+```
+
+## Packages
+
+    ToDo -> A CLI based multipage to-do list
+    Wordle -> a wordle game
+    Tree -> prints a file tree/map (auto-exclusion of .git and target directories)
+    Speed Test -> Measures internet speed using a simple command.
+    Create Project -> Bash scripts to Fast launch the start of your project in any framework
+    Uptime Monitor -> Measures uptime for a website over intervals
 
 ## Future Projects
-
-### **Developer Tools**
-
-1. **Code Snippet Manager** – Save, search, and manage code snippets with tags and descriptions.
-2. **CLI Info** – Get Destailed descriptions on any command with more than just the '--help' screen.
 
 ### **System Utilities**
 
@@ -33,34 +62,19 @@ This project only supports BASH on Windows systems currently.
 4. **Local Search Engine** – Indexes and searches files/documents on your computer.
 5. **Automated Backup Tool** – Syncs important files to an external drive or cloud storage.
 
-### **Internet & Networking**
-
-1. **CLI Weather App** – Fetches weather forecasts using an API.
-2. **RSS Reader** – Fetches and displays articles from your favorite RSS feeds.
-
 ### **Fun & Miscellaneous**
 
-1. **CLI-Tetris** – Something like Chess, Tetris, or a text adventure.
+1. **CLI Weather App** – Fetches weather forecasts using an API.
 2. **Bonsai** – Creates Ascii Bonsai tree with customization options.
-3. **Music Player** – Plays local music files with simple navigation.
-4. **Stock Visualiser** - gives me stock updates for the past day
+3. **Stock Visualiser** - gives me stock updates for the past day
 
-## Added BASH Aliases
+## License
 
-    "la" = ls -a
-    "rf" = rm -rf
-    "c" = clear
-    "b" = cd ..
-    "gl" = git log --oneline --decorate --all
-    "mkcd" = mkdir $ && cd $
-    "view" = cd $ && la && b
-    "sr" = cd ~/source/repos
-    "rollback" = git reset HEAD^ && git push origin HEAD --force
+MIT License © 2025 sparrowsaurora
 
-## Packages
+## Contact
 
-    ToDo -> A CLI based multipage to-do list
-    Wordle -> a wordle game
-    Tree -> prints a file tree/map (auto-exclusion of .git and target directories)
-    Speed Test -> Measures internet speed using a simple command.
-    Create Project -> Bash scripts to Fast launch the start of your project in any framework
+\> [github](https://github.com/sparrowsaurora)  
+\> [email](mailto:sparrows.au@gmail.com)
+
+[(Back To Top)](#bash-salt)

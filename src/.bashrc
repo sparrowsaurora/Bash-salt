@@ -43,7 +43,7 @@ function rollback() {
 
 function nvenv() {
     if [ -z "$1" ]; then
-        echo "Usage: nenv <env_name>"
+        echo "Usage: nvenv <env_name>"
         return 1
     fi
     echo "Creating Virtual environment <$1>"
