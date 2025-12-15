@@ -18,8 +18,9 @@ ENDCOLOR="\e[0m" # Return
 # -----------------------
 #  Configuration
 # -----------------------
-
 CONFIG_FILE="./test/config.json" # path to config file - TEST FOR NOW
+bashrc_file="./test/bashrc.txt"
+alias_file="./test/aliases.txt"
 ALL_PACKAGES=("wordle" "tree" "create_project" "speedtest" "uptime_monitor" "on_startup") # list all packages here
 # TO ADD: todo
 INSTALLED_PACKAGES=()
@@ -28,6 +29,14 @@ INSTALLED_PACKAGES=()
 #  Function Definitions
 # -----------------------
 
+# Request to install a package
+#
+# Calls install_package_action if confirmed on package.
+# This is the user interface layer.
+#
+# Options:
+#   -a | --all : install all packages without prompt
+#   -f | --force : force install without prompt
 function install_package_request() {
     local install_all=false
     local force_install=false
@@ -85,6 +94,10 @@ function install_package_request() {
     fi
 }
 
+# Install the package from the extracted folder
+# copy files, clean up, etc.
+# Arguments:
+#   $1 : package name
 function install_package_action() {
     local package_name="$1"
     local sh_file="$package_name/$package_name.sh"
@@ -102,7 +115,10 @@ function install_package_action() {
     INSTALLED_PACKAGES+=("$package_name")
 }
 
-function make_config() { # I Hope this works
+
+# Make the config.json file based on user input
+# Installs to config_file variable location
+function make_config() {
     echo -e "${BLUE}Generating configuration...${ENDCOLOR}"
     
     # Username and email
@@ -167,18 +183,16 @@ SOME PACKAGES REQUIRE A PYTHON INTERPRETER
 ##########################################\n"
 
 
-# add aliases to .bashrc
-bashrc_file="./test/bashrc.txt"
+# add commands to .bashrc & .aliases
 touch $bashrc_file
 cat .bashrc >> $bashrc_file
 echo -e "Base commands echoed to ${BOLDBLUE}$bashrc_file${ENDCOLOR}\n"
 
-alias_file="./test/aliases.txt"
 touch $alias_file
 cat .aliases >> $alias_file
 echo -e "Base aliases echoed to ${BOLDBLUE}$alias_file${ENDCOLOR}\n"
 
-# small delay
+# small delay for the vibes
 sleep 0.1
 
 
@@ -208,7 +222,7 @@ if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
     make_config
     # echo -e "${ITALICRED}Error: Logic still in development${ENDCOLOR}"
 else
-    echo -e "Some packages Require $CONFIG_FILE.\nPlease complete at your earliest convenience" # underline this
+    echo -e "Some packages Require $CONFIG_FILE.\nPlease complete at your earliest convenience" # TODO: underline this
 fi
 
 echo -e "${GREEN}Setup Successful${ENDCOLOR}"
