@@ -6,7 +6,13 @@
 - Redesign UI
 - Add script install tool
 
+DECISION:: static?
+
+pros: easier hosting, free completely
+cons: lacks strength on resume,
+
+solution. temp static, convert to php microframework
+
 ### Note to Dev
 
-figure out how to self-host webserver and database.
-^^ Use same system as NAS.
+deploy to vercel/github pages if static
