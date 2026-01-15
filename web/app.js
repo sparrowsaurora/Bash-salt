@@ -34,3 +34,36 @@ function downloadFile() {
     link.click();
     document.body.removeChild(link);
 };
+
+// ------------------------
+// fun fact generator logic
+// ------------------------
+
+const funFacts = [
+    "Bash-salt is a play on words of 'Bassalt'; what I originally wanted to call this project",
+    "This project was originally a way to quickly add my BASH commands to any computer I used",
+    // "PHP is my second favourite language; I strongly dislike JavaScript. So this site is made with PHP"
+];
+
+function getRandomFunFact() {
+    const randomIndex = Math.floor(Math.random() * funFacts.length);
+    return funFacts[randomIndex];
+}
+
+const funFactElement = document.getElementById("fun-fact");
+funFactElement.innerText = getRandomFunFact();
+
+// ------------------------
+// copy command logic
+// ------------------------
+
+function copyCommand() {
+    const text = document
+    .getElementById("bash-command")
+    .innerText
+    .trim();
+
+    navigator.clipboard.writeText(text).then(() => {
+    alert("Command copied to clipboard!");
+    });
+}

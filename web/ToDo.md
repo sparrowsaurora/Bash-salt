@@ -15,4 +15,4 @@ solution. temp static, convert to php microframework
 
 ### Note to Dev
 
-deploy to vercel/github pages if static
+deploy to vercel

@@ -60,7 +60,29 @@
                         Download
                     </button>
 
-                    <!-- download script here -->
+                    <p class="mt-10">
+                        or use this install script in your terminal:
+                    </p>
+                    <div
+                        onclick="copyCommand()"
+                        class="group mx-auto mt-3 max-w-xl cursor-pointer rounded-lg border border-gray-200 bg-gray-50 p-4 transition hover:bg-gray-100 active:bg-gray-200"
+                    >
+                        <div class="flex items-center justify-between gap-4">
+                            <pre
+                                id="bash-command"
+                                class="overflow-x-auto font-mono text-sm text-gray-800"
+                            >
+
+curl -fsSL https://bash-salt.vercel.app/install.sh | bash
+    </pre
+                            >
+                            <span
+                                class="select-none rounded-md border border-gray-300 bg-white px-2 py-1 text-xs text-gray-500 transition group-hover:text-gray-900"
+                            >
+                                Click to copy
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <!-- <aside class="w-full">
                 <img src="placeholder" alt="placeholder" class="border-1 rounded">
@@ -107,17 +129,17 @@
             <div class="why py-15">
                 <h2 class="text-5xl font-semibold">Why I Made It</h2>
                 <p class="text-xl mt-5">
-                    I made Bash-salt originally a way to streamline my
-                    development process,<br />
-                    but slowly it got bigger and bigger and it got harder and
-                    harder to set-up on different computers.<br />
+                    I made Bash-salt as a way to streamline my development
+                    process.<br />
+                    when i began using a terminal, i found i set up a lot of
+                    shortcuts and tools <br />
+                    slowly it got bigger and bigger and it got harder and harder
+                    to set-up on different computers.<br />
                     So i decided to make a tool that would automatically set up
                     my shortcuts and tools on any new pc with a single
                     download.<br />
                     Eventually I realised if it's a useful too for me, it might
-                    help other developers.<br />
-                    And here we are on a website I built to share my project
-                    more freely
+                    help other developers.
                 </p>
             </div>
 
@@ -125,26 +147,26 @@
                 <h2 class="text-5xl font-semibold pb-3">About the Dev</h2>
                 <h2 class="text-3xl py-2">Hi, I'm Sparrow</h2>
                 <h3 class="text-xl font-semibold pb-2">
-                    Programmer // Content Creator // Entrepreneur
+                    Programmer & Content Creator
                 </h3>
 
                 <p class="text-xl">
                     I'm a software developer and content creator with interests
-                    in mechatronics, machine learning and building functional
-                    projects.<br />
-                    I'm currently studying a Diploma of Advanced programming at
-                    TAFE, and Mechatronics in my free time.<br />
-                    My goal is to study at MIT and develop projects that give
-                    people more access to the world.<br />
+                    in embedded systems and building functional projects.<br />
+                    In my free time I'm building projects like this and embedded
+                    projects like a Music control board.
                 </p>
                 <a href="mailto:sparrows.au@gmail.com" class="underline"
                     >Contact me here</a
                 >
             </div>
 
-            <div class="mb-15" id="inline-docs">
-                <h2 class="text-5xl font-semibold mb-5">Documentation</h2>
+            <!-- <div class="mb-16" id="inline-docs">
+                <h2 class="mb-6 text-5xl font-semibold">Documentation</h2>
+                <div id="docs-loop" class="space-y-6"></div>
             </div>
+
+            <script src="docs.js"></script> -->
 
             <div class="final-cta">
                 <h2 class="text-5xl font-semibold mb-5">
@@ -170,6 +192,7 @@
             </div>
         </main>
         <footer class="bg-gray-700 text-white text-center py-2">
+            <h2 class="text-l mb-2">Fun fact: <span id="fun-fact"></span></h2>
             <p>&copy; <span id="year"></span> | Sparrows_aurora</p>
         </footer>
     </body>
