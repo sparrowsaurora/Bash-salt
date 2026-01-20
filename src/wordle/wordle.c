@@ -16,11 +16,13 @@
 // Include necessary headers
 
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <ctype.h>
 
 
 // define colours
 
-#define GREEN "\033[0;32m"
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
 #define CYAN "\033[0;36m"
@@ -32,9 +34,13 @@
 #define END "\033[0m"
 
 // datatypes
+typedef struct {
+    char letter;
+    int state;
+} coloured_letter;
+
 typedef union guess_attempt {
-    char word[6];
-    int attempt_number;
+    coloured_letter word[5];
 } guess_attempt;
 
 // Function prototypes
@@ -58,9 +64,54 @@ void colour_refernce_instructions() {
     printf("%sRed = Not in word%s\n", RED, END);
 }
 
+void convert_guess_to_numbers(
+    const char *target,
+    const char *guess,
+    int latest_guess[5]
+) {
+    for (int i = 0; i < 5; i++) {
+        if (guess[i] == target[i]) {
+            latest_guess[i] = 2;
+        } else if (strchr(target, guess[i]) != NULL) {
+            latest_guess[i] = 1;
+        } else {
+            latest_guess[i] = 0;
+        }
+    }
+}
+
+// void print_list_of_past_words_coloured(guess_attempt past_guesses[]) {
+//     for (int i; i >= (sizeof(past_guesses) / sizeof(past_guesses[0])); i++ ) {
+//         for 
+//     }
+// }
+
+bool check_for_end_condition(int latest_guess[5], int guess_count, const char *target) {
+    bool win = true;
+    for (int i = 0; i < 5; i++) {
+        if (latest_guess[i] != 2) {
+            win = false;
+            break;
+        }
+    }
+
+    if (win) {
+        printf("Well Done!\n");
+        return true;
+    }
+
+    if (guess_count == 6) {
+        printf("Nice try, the word was %s\n", target);
+        return true;
+    }
+
+    return false;
+}
+
+
 int main() {
     print_instructions();
-    return 0 ;
+    return 0;
 }
     
 
