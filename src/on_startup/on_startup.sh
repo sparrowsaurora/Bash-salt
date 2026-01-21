@@ -1,8 +1,2 @@
 # Run startup file
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    ~/source/repos/Bash-salt/src/on_startup/on_startup
-elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" || "$OSTYPE" == "win32" ]]; then
-    ~/source/repos/Bash-salt/src/on_startup/on_startup.exe
-else
-    echo "Unsupported OS"
-fi
+$HOME/.bash-salt/0.6.0/on_startup.exe

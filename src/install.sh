@@ -19,9 +19,6 @@ ENDCOLOR="\e[0m" # Return
 #  Configuration
 # -----------------------
 
-# ALL_PACKAGES=("wordle" "speedtest" "uptime_monitor" "on_startup") # list all packages here
-# INSTALLED_PACKAGES=()
-
 STARTING_DIR=$PWD #save current dir for end process
 # echo $STARTING_DIR
 

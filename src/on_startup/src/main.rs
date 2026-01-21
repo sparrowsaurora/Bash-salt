@@ -3,6 +3,7 @@ use colored::*;
 use serde::Deserialize;
 use std::fs::File;
 use std::io::BufReader;
+use std::path::PathBuf;
 
 #[derive(Deserialize)]
 struct Config {
@@ -21,8 +22,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Gen current time
     let now = Local::now();
 
+    // get $HOME
+    let mut path: PathBuf = dirs::home_dir().ok_or("Could not determine home directory")?;
+
+    path.push(".bash-salt/config.json");
     // Open the file
-    let file = File::open("../../src/config.json")?;
+    let file = File::open(&path)?;
     let reader = BufReader::new(file);
 
     // Parse the JSON into your struct
