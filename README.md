@@ -7,15 +7,15 @@ _WARNING: All scripts in this tool are handmade and not overly specialised, and 
 
 ## From the Dev
 
-currently testing locally http://bash-salt.test/  
-Check out [ryankelley.dev/bashsalt](https://ryankelley.dev/bashsalt)... eventually
+Currently running live at [bash-salt.vercel.app](https://bash-salt.vercel.app/)  
+There is currently no uninstall script. but you can just delete the directory
 
 ## Installation
 
 You can install via your (git)BASH cli by using the command
 
 ```shell
-curl -sfL https://ryankelley.dev/bashsalt/install.sh | sh
+curl -fsSL https://bash-salt.vercel.app/install.sh | bash
 ```
 
 ### NOTE : :
@@ -34,17 +34,18 @@ We're currently adding Linux support and removing the need for a python interpre
 "mkcd" = mkdir $ && cd $
 "view" = cd $ && la && b
 "sr" = cd ~/source/repos
-"rollback" = git reset HEAD^ && git push origin HEAD --force
 ```
+
+etc.  
+please view src/.aliases for all aliases.  
+and please view src/.bashrc for remaining commands.
 
 ## Packages
 
-    ToDo -> A CLI based multipage to-do list
-    Wordle -> a wordle game
-    Tree -> prints a file tree/map (auto-exclusion of .git and target directories)
+    on_startup -> A startup script that activates when sourcing your terminal.
     Speed Test -> Measures internet speed using a simple command.
-    Create Project -> Bash scripts to Fast launch the start of your project in any framework
     Uptime Monitor -> Measures uptime for a website over intervals
+    Wordle -> a wordle game
 
 ## Future Projects
 
@@ -70,7 +71,7 @@ We're currently adding Linux support and removing the need for a python interpre
 
 ## License
 
-MIT License © 2025 sparrowsaurora
+GNU License © 2026 sparrowsaurora
 
 ## Contact
 
