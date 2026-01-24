@@ -93,8 +93,8 @@ echo "Downloaded files"
 echo "linking to .bashrc" # ?OPTION: option to rename .bashrc file (-b?)
 # cat <<EOF >> "$HOME/.bashrc"
 cat <<EOF >> ".echo_test" # !IMPORTANT: remove before prod
-[ -f "$HOME/$DOT_DIR/.aliases" ] && source "$HOME/$DOT_DIR/.aliases"
-[ -f "$HOME/$DOT_DIR/.bashrc" ] && source "$HOME/$DOT_DIR/.bashrc"
+[ -f "$HOME/$DOT_DIR/$VERSION/.aliases" ] && source "$HOME/$DOT_DIR/$VERSION/.aliases"
+[ -f "$HOME/$DOT_DIR/$VERSION/.bashrc" ] && source "$HOME/$DOT_DIR/$VERSION/.bashrc"
 EOF
 
 # config file setup
