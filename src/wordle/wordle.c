@@ -19,6 +19,8 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdint.h>
+#include <string.h>
 
 
 // define colours
@@ -43,11 +45,18 @@ typedef union guess_attempt {
     coloured_letter word[5];
 } guess_attempt;
 
-// Function prototypes
-void print_instructions();
-void colour_refernce_instructions();
-guess_attempt get_user_guess(int attempt_number);
-// convert_guess_to_numbers(char* target_word, char* user_guess);
+// helper functions
+
+int is_in_array(int val, int* arr, int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == val) { // If the current element matches the value
+            return 1; // Found the value, return true immediately
+        }
+    }
+    return 0; // Looped through the whole array, value not found
+}
+
+// main functions
 
 void print_instructions() {
     printf("%sWelcome to the Word Guessing Game!%s\n", CYAN, END);
@@ -62,6 +71,25 @@ void colour_refernce_instructions() {
     printf("%sGreen = Correct%s\n", GREEN, END);
     printf("%sYellow = Wrong Position%s\n", YELLOW, END);
     printf("%sRed = Not in word%s\n", RED, END);
+}
+
+void get_and_validate_guess(uint8_t guess_count) {
+    char guess[10];
+    printf("---------------\n");
+    printf("(%d/6) Enter a Guess: ", guess_count);
+
+    fgets(guess, 10, stdin);
+
+    if (strlen(guess) > 5) {
+        guess[5] = '\0'; // Truncate the string to the first 5 characters
+    }
+    
+    for (int i = 0; guess[i] != '\0'; i++) {
+        guess[i] = (char)tolower((unsigned char)guess[i]);
+    }
+
+    printf("\n---------------\n");
+
 }
 
 void convert_guess_to_numbers(
