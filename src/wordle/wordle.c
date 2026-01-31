@@ -22,6 +22,9 @@
 #include <stdint.h>
 #include <string.h>
 
+// import words
+#include "target_words.h"
+#include "all_words.h"
 
 // define colours
 
@@ -44,6 +47,10 @@ typedef struct {
 typedef union guess_attempt {
     coloured_letter word[5];
 } guess_attempt;
+
+// function primatives
+
+void colour_refernce_instructions(void);
 
 // helper functions
 

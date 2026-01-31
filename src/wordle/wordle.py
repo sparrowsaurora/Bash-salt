@@ -1,4 +1,5 @@
 # Replacing Termcolor with ANSI codes
+from random import choice
 RED = "\033[0;31m"
 GREEN = "\033[0;32m"
 CYAN = "\033[0;36m"
@@ -8,6 +9,7 @@ BOLD = "\033[1m"
 FAINT = "\033[2m"
 UNDERLINE = "\033[4m"
 END = "\033[0m"
+
 
 def print_instructions():
     '''
@@ -20,6 +22,7 @@ def print_instructions():
     print("if you need help, type 'help'")
     print("Good luck and have fun!")
 
+
 def colour_refernce_instructions():
     '''
         colours instructions for print_instructions()
@@ -27,23 +30,26 @@ def colour_refernce_instructions():
     print(f"{GREEN}Green = Correct{END}")
     print(f"{YELLOW}Yellow = Wrong Position{END}")
     print(f"{RED}Red = Not in word{END}")
-    #colour_references = [
-     #   ["GREEN", "= correct, "],
-      #  ["YELLOW", "= wrong position, "],
-       # ["RED", "= not in word."]
-    #]
-        
-    #for reference in colour_references:
-     #   print(f"{reference[0]}{reference[0] + " " + reference[1]{END}, end=" ")
+    # colour_references = [
+    #   ["GREEN", "= correct, "],
+    #  ["YELLOW", "= wrong position, "],
+    # ["RED", "= not in word."]
+    # ]
+
+    # for reference in colour_references:
+    #   print(f"{reference[0]}{reference[0] + " " + reference[1]{END}, end=" ")
+
 
 def get_and_validate_guess(guess_count):
     '''
         ask for guess and confirm it is a validate word
     '''
     while True:
-        print("---------------")
-        guess_word = input("(" + str(guess_count) + "/6) Enter a Guess: ").strip(" ").lower()
-        print("---------------")
+        print("---------------\n")
+        guess_word = input(
+            "(" + str(guess_count) + "/6) Enter a Guess: "
+        ).strip(" ").lower()
+        print("---------------\n")
         print()
 
         if guess_word in all_words():
@@ -58,6 +64,7 @@ def get_and_validate_guess(guess_count):
         else:
             print("not a word")
 
+
 def convert_guess_to_numbers(target_word, guess_word):
     target_word_list = list(target_word)
     guess_word_list = list(guess_word)
@@ -68,7 +75,7 @@ def convert_guess_to_numbers(target_word, guess_word):
         1 = not in correct pos but is in word
         2 = in word & in correct pos
     '''
-    letter_position=0
+    letter_position = 0
     latest_guess = []
     while letter_position < 5:
         if target_word_list[letter_position] == guess_word_list[letter_position]:
@@ -77,8 +84,9 @@ def convert_guess_to_numbers(target_word, guess_word):
             latest_guess.append(1)
         else:
             latest_guess.append(0)
-        letter_position+=1
+        letter_position += 1
     return target_word_list, guess_word_list, latest_guess
+
 
 def adjust_guess_for_duplicates(guess_word_list, target_word, target_word_list, latest_guess):
     '''
@@ -95,7 +103,8 @@ def adjust_guess_for_duplicates(guess_word_list, target_word, target_word_list, 
         if guess_word_list.count(letter) > 1:
             # Count occurrences of the letter in the target word
             target_letter_count = target_word.count(letter)
-            guess_letter_positions = [index for index, guessed_letter in enumerate(guess_word_list) if guessed_letter == letter]
+            guess_letter_positions = [index for index, guessed_letter in enumerate(
+                guess_word_list) if guessed_letter == letter]
 
             # Track how many correct and incorrect positions we've assigned
             correct_positions = 0
@@ -114,7 +123,9 @@ def adjust_guess_for_duplicates(guess_word_list, target_word, target_word_list, 
                         latest_guess[position] = 1
                         incorrect_positions += 1
                     else:
-                        latest_guess[position] = 0  # Mark extra instances as `0` if target letter count is met
+                        # Mark extra instances as `0` if target letter count is met
+                        latest_guess[position] = 0
+
 
 def convert_number_letter_values_to_colours(guess_word_list, latest_guess, past_guesses):
     '''
@@ -132,6 +143,7 @@ def convert_number_letter_values_to_colours(guess_word_list, latest_guess, past_
     past_guesses.append(current_col_guess)
     return past_guesses
 
+
 def print_list_of_past_words_coloured(past_guesses):
     # prints list of past words
     for guess in past_guesses:
@@ -139,6 +151,7 @@ def print_list_of_past_words_coloured(past_guesses):
             color = globals()[color.upper()]
             print(f"{color}{letter}{END}", end=" ")
         print()
+
 
 def check_for_end_condition(latest_guess, guess_count, target_word):
     # checks for correct word or maxed guesses
@@ -148,9 +161,10 @@ def check_for_end_condition(latest_guess, guess_count, target_word):
         print("Nice try, The word was " + str(target_word))
     else:
         return False
-    
+
+
 def target_word():
-    #get random target word function
+    # get random target word function
     target_word_file = open(TARGET_WORDS, "r")
     return choice(target_word_file.readlines())
 
@@ -162,11 +176,13 @@ def target_word():
 #     wordle_guesses.writelines("It took " + str(guess_count) + " guesses to guess the word " + target_word + "\n")
 #     wordle_guesses.close()
 
+
 def all_words():
     all_words_file = open(ALL_WORDS, "r")
     all_words = all_words_file.read().split("\n")
     all_words_file.close()
     return all_words
+
 
 def main(target_word):
     guess_count = 0
@@ -175,22 +191,27 @@ def main(target_word):
     print_instructions()
 
     while end_condition == False:
-        #guessing mechanics
+        # guessing mechanics
         guess_word, guess_count = get_and_validate_guess(guess_count)
 
         # main logic
-        target_word_list, guess_word_list, latest_guess = convert_guess_to_numbers(target_word, guess_word)
-        adjust_guess_for_duplicates(guess_word_list, target_word, target_word_list, latest_guess)
-        convert_number_letter_values_to_colours(guess_word_list, latest_guess, past_guesses)
+        target_word_list, guess_word_list, latest_guess = convert_guess_to_numbers(
+            target_word, guess_word)
+        adjust_guess_for_duplicates(
+            guess_word_list, target_word, target_word_list, latest_guess)
+        convert_number_letter_values_to_colours(
+            guess_word_list, latest_guess, past_guesses)
 
         print_list_of_past_words_coloured(past_guesses)
 
-        end_condition = check_for_end_condition(latest_guess, guess_count, target_word)
+        end_condition = check_for_end_condition(
+            latest_guess, guess_count, target_word)
     # total_guesses_to_file(guess_count, target_word)
-    print(f"It took {str(guess_count)} guesses to guess the word '{target_word}'")
+    print(
+        f"It took {str(guess_count)} guesses to guess the word '{target_word}'")
 
-from random import choice
-#from termcolor import cprint
+
+# from termcolor import cprint
 
 ALL_WORDS = "src\\wordle\\all_words.txt"
 TARGET_WORDS = "src\\wordle\\target_words.txt"
